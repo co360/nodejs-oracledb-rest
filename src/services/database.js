@@ -32,7 +32,7 @@ function handleDatabaseOperation(request, response, callback) {
               return;
           }
           // do with the connection whatever was supposed to be done
-          console.log('Connection acquired ; go execute ');
+          console.log('Connection acquired - go execute ');
           callback(request, response, connection);
       });
 }//handleDatabaseOperation
