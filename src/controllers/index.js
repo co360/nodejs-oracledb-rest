@@ -10,10 +10,10 @@ const getProdByCodprod = (request, response) =>{
       outFormat: oracledb.OBJECT
     }, (err, result) => {
       if(err){
-        response.json({"error": err.message});
+        response.json(err.message);
       }
       else{
-        response.json({"product":result.rows});
+        response.json(result.rows[0]);
       }
       doRelease(connection);
     });
@@ -28,10 +28,10 @@ const getProdByCodAuxiliar = (request, response) =>{
       outFormat: oracledb.OBJECT
     }, (err, result) => {
       if(err){
-        response.json({"error": err.message});
+        response.json(err.message);
       }
       else {
-        response.json({"product": result.rows});
+        response.json(result.rows[0]);
       }
       doRelease(connection);
     });
